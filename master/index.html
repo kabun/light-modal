@@ -10,6 +10,7 @@
     <link href="./mincss/common.min.css" rel="stylesheet" type="text/css">
     <link href="./mincss/modal.min.css" rel="stylesheet" type="text/css">
     <link href="./mincss/lights.min.css" rel="stylesheet" type="text/css">
+    <link href="./mincss/lity.min.css" rel="stylesheet" type="text/css">
   </head>
   <body>
   	<div class="contents">
@@ -37,10 +38,10 @@
   		<main id="main" class="wrapper-area main-wrapper">
   			<!-- profile -->
   			<section id="profile" class="section-wrapper profile-wrapper">
-  				<h2 class="section-title">
+  				<h2 class="section-title scroll-reveal srOpt-scale_0f1-duration_2000-reset_true">
   					<div class="section-title__txt font-accent">テスト</div>
   				</h2>
-  				<ul class="clearfix">
+  				<ul class="clearfix scroll-reveal">
   					<li class="section-inner">
   						<div class="section-content">
   							<div class="section-img">
@@ -67,6 +68,16 @@
   										</li>
   										<li class="section-txt__sample-thum-item" data-openmodal="modal-overlay-like3">
   											<img src="./img/light-modal/skate-thum-1.png" alt="" width="100%" height="100%">
+  										</li>
+  									</ul>
+  								</div>
+                  <div class="section-txt__sub-caption">
+  									<ul class="section-txt__sample-list">
+  										<li class="section-txt__sample-thum-item">
+                        <!-- youtube modal-->
+                        <a href="//www.youtube.com/watch?v=dG7UlIs44w4" data-lity>
+  										  	<img src="./img/light-modal/illust-thum-1.png" alt="" width="100%" height="100%">
+                        </a>
   										</li>
   									</ul>
   								</div>
@@ -156,10 +167,23 @@
 
 
 
+
   	<script src="./minjs/jquery-3.2.1.min.js"></script>
   	<script src="./minjs/common.min.js"></script>
   	<script src="./minjs/modal.min.js"></script>
   	<script src="./minjs/lights.min.js"></script>
 
+  	<script src="./minjs/scrollreveal.min.js"></script>
+    <script>
+      window.sr = ScrollReveal({ reset: true });
+      sr.reveal( '.scroll-reveal', {
+        distance : '20%',
+        duration : 800,
+        reset    : true
+      });
+      sr.reveal( '.scroll-reveal', { origin: 'left' } );
+    </script>
+
+    <script src="./minjs/lity.min.js"></script>
   </body>
 </html>
