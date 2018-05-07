@@ -351,6 +351,7 @@ a {
     overflow: hidden;
     transform: skewX(-50deg);
     margin-left: -650px;
+    transition: all 0.5s ease;
     .move-link__inner {
       position: absolute;
       transform: skewX(50deg);
@@ -360,33 +361,16 @@ a {
       height: 80px;
       right: 100px;
       top: 50px;
+      transition: all 0.5s ease;
     }
     &:hover {
-      animation: move 0.5s ease 0s 1 forwards;
-      background-color: #a32222;
-      .move-link__inner {
-        animation: move2 0.5s ease 0s 1 forwards;
-      }
-    }
-  }
-  @keyframes move {
-    0% {
-      transform: skewX(-50deg);
-      margin-left: -650px;
-    }
-    100% {
       transform: skewX(-60deg);
       margin-left: -450px;
-    }
-  }
-  @keyframes move2 {
-    0% {
-    right: 100px;
-      transform: skewX(50deg);
-    }
-    100% {
-      right: 250px;
-      transform: skewX(60deg);
+      background-color: #a32222;
+      .move-link__inner {
+        right: 250px;
+        transform: skewX(60deg);
+      }
     }
   }
 

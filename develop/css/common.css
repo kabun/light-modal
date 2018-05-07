@@ -392,6 +392,7 @@ a {
   overflow: hidden;
   transform: skewX(-50deg);
   margin-left: -650px;
+  transition: all 0.5s ease;
 }
 .move-link .move-link-1 .move-link__inner {
   position: absolute;
@@ -402,33 +403,16 @@ a {
   height: 80px;
   right: 100px;
   top: 50px;
+  transition: all 0.5s ease;
 }
 .move-link .move-link-1:hover {
-  animation: move 0.5s ease 0s 1 forwards;
+  transform: skewX(-60deg);
+  margin-left: -450px;
   background-color: #a32222;
 }
 .move-link .move-link-1:hover .move-link__inner {
-  animation: move2 0.5s ease 0s 1 forwards;
-}
-@keyframes move {
-  0% {
-    transform: skewX(-50deg);
-    margin-left: -650px;
-  }
-  100% {
-    transform: skewX(-60deg);
-    margin-left: -450px;
-  }
-}
-@keyframes move2 {
-  0% {
-    right: 100px;
-    transform: skewX(50deg);
-  }
-  100% {
-    right: 250px;
-    transform: skewX(60deg);
-  }
+  right: 250px;
+  transform: skewX(60deg);
 }
 .move-link .move-link-2 {
   position: relative;
