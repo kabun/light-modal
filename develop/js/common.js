@@ -86,4 +86,61 @@ $(function(){
      return false;
   });
 
+
+
+  //hover
+  // 初期化
+  var moveLink1 = $('.move-link-1');
+  var moveLink2 = $('.move-link-2');
+  var moveLinkOpenBtn = $('.move-link__open-btn');
+  var moveLinkChangeBtn = $('.move-link__change-btn');
+
+  $(moveLink1).find(moveLinkOpenBtn).hover(function(){
+    $(moveLink1).find(moveLinkOpenBtn).addClass('disable');
+    $(moveLink2).find(moveLinkOpenBtn).addClass('disable');
+    $(moveLink1).addClass('active');
+    $(moveLink2).addClass('none-active');
+    // スライドアニメーション後
+    $(moveLink1).on('transitionend', function() {
+      $(moveLink1).find(moveLinkChangeBtn).removeClass('disable');
+      $(moveLink2).find(moveLinkChangeBtn).removeClass('disable');
+    });
+  });
+  $(moveLink2).find(moveLinkOpenBtn).hover(function(){
+    $(moveLink1).find(moveLinkOpenBtn).addClass('disable');
+    $(moveLink2).find(moveLinkOpenBtn).addClass('disable');
+    $(moveLink1).addClass('none-active');
+    $(moveLink2).addClass('active');
+    // スライドアニメーション後
+    $(moveLink2).on('transitionend', function() {
+      $(moveLink1).find(moveLinkChangeBtn).removeClass('disable');
+      $(moveLink2).find(moveLinkChangeBtn).removeClass('disable');
+    });
+  });
+  $(moveLink1).find(moveLinkChangeBtn).hover(function(){
+    $(moveLink2).find(moveLinkChangeBtn).addClass('disable');
+    $(moveLink2).removeClass('active');
+    $(moveLink2).addClass('none-active');
+    $(moveLink1).removeClass('none-active');
+    $(moveLink1).addClass('active');
+    // スライドアニメーション後
+    $(moveLink1).on('transitionend', function() {
+      $(moveLink2).find(moveLinkChangeBtn).removeClass('disable');
+    });
+  });
+  $(moveLink2).find(moveLinkChangeBtn).hover(function(){
+    $(moveLink1).find(moveLinkChangeBtn).addClass('disable');
+    $(moveLink1).removeClass('active');
+    $(moveLink1).addClass('none-active');
+    $(moveLink2).removeClass('none-active');
+    $(moveLink2).addClass('active');
+    // スライドアニメーション後
+    $(moveLink2).on('transitionend', function() {
+      $(moveLink1).find(moveLinkChangeBtn).removeClass('disable');
+    });
+  });
+
+
+
+
 });
