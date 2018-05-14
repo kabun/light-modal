@@ -14,7 +14,7 @@
   </head>
   <body>
   	<div class="contents">
-  		<header id="header" class="wrapper-area header-wrapper">
+  		<header id="header" class="wrapper-area header-wrapper js-section">
   			<div class="header-lights-area">
   				<span class="header-lights"></span>
   			</div>
@@ -25,7 +25,8 @@
   							<img src="./img/light-modal/icon-moon.png" alt="" width="40" height="40">#
   						</a>
   					</li>
-  					<li class="gnav__item font-accent"><a href="#profile" class="tap-link-btn">テスト</a></li>
+  					<li class="gnav__item font-accent"><a href="#my" class="tap-link-btn">テスト</a></li>
+  					<li class="gnav__item font-accent"><a href="#profile" class="tap-link-btn">テスト2</a></li>
   				</ul>
   			</nav>
   			<section id="topimage" class="section-wrapper topimage-wrapper">
@@ -37,7 +38,47 @@
   		</header>
   		<main id="main" class="wrapper-area main-wrapper">
   			<!-- my -->
-  			<section id="my" class="section-wrapper my-wrapper">
+  			<section id="my" class="section-wrapper my-wrapper js-section">
+  				<h2 class="section-title scroll-reveal">
+  					<div class="section-title__txt font-accent">テスト</div>
+  				</h2>
+  				<ul class="clearfix scroll-reveal">
+  					<li class="section-inner">
+  						<div class="section-content">
+  							<div class="section-img">
+  								<img src="./img/light-modal/profile-1.png" alt="" width="300" height="300">
+  							</div>
+  							<div class="section-txt">
+  								<div class="section-txt__title font-accent">テスト</div>
+  								<div class="section-txt__sub-title">テスト言語</div>
+  								<div class="section-txt__sub-caption">HTML、CSS、JavaScript</div>
+  								<div class="section-txt__sub-caption">
+  									<ul class="section-txt__sample-list">
+  										<li class="section-txt__sample-thum-item" data-openmodal="modal-overlay-like1">
+  											<img src="./img/light-modal/illust-thum-1.png" alt="" width="100%" height="100%">
+  										</li>
+  										<li class="section-txt__sample-thum-item" data-openmodal="modal-overlay-like2">
+  											<img src="./img/light-modal/photo-thum-1.png" alt="" width="100%" height="100%">
+  										</li>
+  										<li class="section-txt__sample-thum-item" data-openmodal="modal-overlay-like3">
+  											<img src="./img/light-modal/skate-thum-1.png" alt="" width="100%" height="100%">
+  										</li>
+  									</ul>
+  								</div>
+                  <div class="section-txt__sub-caption">
+  									<ul class="section-txt__sample-list">
+  										<li class="section-txt__sample-thum-item">
+                        <!-- youtube modal-->
+                        <a href="//www.youtube.com/watch?v=8W1ACFJfMew" data-lity>
+  										  	<img src="./img/light-modal/illust-thum-1.png" alt="" width="100%" height="100%">
+                        </a>
+  										</li>
+  									</ul>
+  								</div>
+  							</div>
+  						</div>
+  					</li>
+  				</ul>
   				<h2 class="section-title scroll-reveal">
   					<div class="section-title__txt font-accent">テスト</div>
   				</h2>
@@ -80,10 +121,38 @@
   				</ul>
   			</section>
         <!-- profile -->
-  			<section id="profile" class="profile-wrapper">
+  			<section id="profile" class="profile-wrapper js-section">
   				<h2 class="section-title scroll-reveal">
   					<div class="section-title__txt font-accent">テスト</div>
   				</h2>
+  				<ul class="clearfix">
+  					<li class="section-inner">
+  						<div class="">
+  							<div class="move-link">
+  								<div class="move-link-1">
+    								<div class="move-link__open-btn">
+                      <img src="./img/light-modal/illust-thum-1.png" alt="" width="80" height="80">
+                    </div>
+    								<div class="move-link__change-btn disable">
+                      <img src="./img/light-modal/illust-thum-1.png" alt="" width="80" height="80">
+                    </div>
+                  </div>
+  								<div class="move-link-2">
+                    <div class="move-link__open-btn">
+                      <img src="./img/light-modal/illust-thum-1.png" alt="" width="80" height="80">
+                    </div>
+    								<div class="move-link__change-btn disable">
+                      <img src="./img/light-modal/illust-thum-1.png" alt="" width="80" height="80">
+                    </div>
+                  </div>
+                  <div class="move-link-3">
+    								<div class="move-link__other-btn">
+                    </div>
+                  </div>
+  							</div>
+  						</div>
+  					</li>
+  				</ul>
   				<ul class="clearfix">
   					<li class="section-inner">
   						<div class="">
@@ -199,13 +268,28 @@
   	<script src="./minjs/common.min.js"></script>
   	<script src="./minjs/modal.min.js"></script>
   	<script src="./minjs/lights.min.js"></script>
-
+    <script src="./minjs/jquery.scrollify.js"></script>
+    <script>
+        var _w = $(window).width();
+        console.log(_w);
+        if(_w > 900){
+          var option = {
+            section : '.js-section', // 対象を指定
+            easing: "swing", // イージングをしてい(jQueryのanimation)
+            scrollSpeed: 600, // スクロール時の速度
+            scrollbars: true, // スクロールバーを表示するか
+          };
+          $(function() {
+            $.scrollify(option); // scrollifyの実行
+          });
+        }
+    </script>
   	<script src="./minjs/scrollreveal.min.js"></script>
     <script>
       window.sr = ScrollReveal({ reset: true });
       sr.reveal( '.scroll-reveal', {
-        distance : '20%',
         duration : 800,
+        rotate : { x: 0, y: 0, z: 360 },
         reset    : true
       });
       sr.reveal( '.scroll-reveal', { origin: 'left' } );
